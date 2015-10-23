@@ -1,0 +1,17 @@
+@import helper._
+@import models.PostWithPermittedParams
+@(postForm: Form[PostWithPermittedParams])
+
+@layouts.application("New post") {
+  @helper.form(action = routes.PostsController.create) {
+    <fieldset>
+      <h3>New post</h3>
+      Title: <input type="text" name="title" /><br />
+      Content: <br />
+      <textarea rows="4" cols="50" name="content"></textarea>
+      <p>
+        <input name="submit" type="submit" class="btn" value="Submit" />
+      </p>
+    </fieldset>
+  }
+}

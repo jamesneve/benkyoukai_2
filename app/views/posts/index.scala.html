@@ -1,0 +1,18 @@
+@import models.Post
+@(posts: Seq[Post], username: String)
+
+@layouts.application("Posts") {
+  @if(!username.isEmpty) {
+    <p>Currently logged in as @username</p>
+  }
+
+  <h1>Blog Posts</h1>
+
+  <ul>
+  @for(post <- posts) {
+    <li><a href="@routes.PostsController.show(post.id.get)">@post.title</a></li>
+  }
+  </ul>
+
+  <a href="@routes.PostsController.add()" class="new-post">New post</a>
+}

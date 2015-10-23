@@ -1,0 +1,16 @@
+@import models._
+@(userForm: Form[UserWithPermittedParams])
+
+@layouts.application("New user") {
+  @helper.form(action = routes.UsersController.create) {
+    <fieldset>
+      <h3>New user</h3>
+      Username: <input type="text" name="username" /><br />
+      Password: <input type="password" name="password" /><br />
+      <p>
+        <input name="submit" type="submit" class="btn" value="Submit" />
+      </p>
+    </fieldset>
+  }
+}
+

@@ -1,0 +1,16 @@
+@import models._
+@(loginForm: Form[UserWithPermittedParams])
+
+@layouts.application("Login") {
+  @helper.form(action = routes.SessionsController.authenticate) {
+    <fieldset>
+      <h3>Login</h3>
+      Username: <input type="text" name="username" /><br />
+      Password: <input type="password" name="password" /><br />
+      <p>
+        <input name="submit" type="submit" class="btn" value="Submit" />
+      </p>
+    </fieldset>
+  }
+}
+

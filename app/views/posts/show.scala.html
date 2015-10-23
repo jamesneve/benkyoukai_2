@@ -1,0 +1,9 @@
+@import models.Post
+@(post: Post)
+@layouts.application(post.title) {
+  <div class="title">
+    <h1>@post.title</h1>
+  </div>
+
+  <p>@post.content</p>
+}
