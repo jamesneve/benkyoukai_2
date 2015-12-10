@@ -81,13 +81,8 @@ class SessionsController extends Controller {
     )
   }
 
-  // 勉強会のために、認証の関数は外のAPIコールをしなきゃいけないと想像しましょう
-  // (ちなみに、海外版とクラウドの認証はこんな感じなので現実的な例)
   def checkUserAuthentication(passwordHash: String, inputPassword: String): Future[Boolean] = {
-    println("Starting complicated and unreliable remote API call")
     Future { 
-      Thread.sleep(6000)  // APIシミュレーション
-      println("Finished complicated and unreliable remote API call")
       scala.util.Random.nextInt(100) match {
         case 50 => false
         case _ => passwordHash == inputPassword.sha1.hex
