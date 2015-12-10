@@ -82,11 +82,6 @@ class SessionsController extends Controller {
   }
 
   def checkUserAuthentication(passwordHash: String, inputPassword: String): Future[Boolean] = {
-    Future { 
-      scala.util.Random.nextInt(100) match {
-        case 50 => false
-        case _ => passwordHash == inputPassword.sha1.hex
-      }
-    }
+    Future(passwordHash == inputPassword.sha1.hex)
   }
 }
