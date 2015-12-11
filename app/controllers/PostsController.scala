@@ -8,10 +8,10 @@ import play.api.data.Forms._
 import java.sql.Date
 import java.util.Calendar
 
-import dao._
+import dao.common._
 
-import models.Post
-import models.PostWithPermittedParams
+import models.common.Post
+import models.common.PostWithPermittedParams
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -26,14 +26,14 @@ class PostsController extends Controller with Secured {
   // Postの一覧ページを表示
   def index = Action.async { implicit request =>
     val username = request.session.get("username").getOrElse("")
-    dao.PostReadDAO.getAll.map { posts =>
+    dao.common.PostReadDAO.getAll.map { posts =>
       Ok(views.html.posts.index(posts, username))
     }
   }
 
   // Postの一つを表示
   def show(id: Long) = Action.async { implicit request =>
-    dao.PostReadDAO.findById(id).map { maybePost =>
+    dao.common.PostReadDAO.findById(id).map { maybePost =>
       maybePost match {
         case Some(post) => Ok(views.html.posts.show(post))
         case _ => NotFound(views.html.shared.notfound())

@@ -1,8 +1,8 @@
 package tests
 
-import dao.PostReadDAO
-import dao.PostWriteDAO
-import models.Post
+import dao.common.PostReadDAO
+import dao.common.PostWriteDAO
+import models.common.Post
 
 import com.jamesneve.factoryhedgehog.Factory
 import com.jamesneve.factoryhedgehog.FactoryDAO

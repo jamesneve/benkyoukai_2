@@ -1,19 +1,6 @@
-name := """simple_blog2"""
+name := """common"""
 
 version := "1.0-SNAPSHOT"
-
-lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
-  .dependsOn(common)
-  .aggregate(common)
-
-lazy val admin = (project in file("subprojects/admin"))
-  .enablePlugins(PlayScala)
-  .dependsOn(common)
-  .aggregate(common)
-
-lazy val common = (project in file("subprojects/common"))
-  .enablePlugins(PlayScala)
 
 scalaVersion := "2.11.7"
 
@@ -21,19 +8,10 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   "com.typesafe.play" %% "play-slick" % "1.0.0",
-  "com.typesafe.play" %% "play-slick-evolutions" % "1.0.0",
-  "mysql" % "mysql-connector-java" % "5.1.24",
-  "com.roundeights" %% "hasher" % "1.2.0",
-  "org.scalatest" %% "scalatest" % "2.2.1" % "test",
-  "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
-  "org.mockito" % "mockito-core" % "1.10.19" % "test"
+  "mysql" % "mysql-connector-java" % "5.1.24"
 )
 
-addSbtPlugin("com.jamesneve" % "database-cleaner" % "0.1.0")
-addSbtPlugin("com.jamesneve" % "factory_hedgehog" % "0.1.8")
-
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
-resolvers += Resolver.url("james-plugins", url("http://dl.bintray.com/jamesneve/sbt-plugins"))(Resolver.ivyStylePatterns)
 resolvers ++= Seq("RoundEights" at "http://maven.spikemark.net/roundeights")
 
 // Scala Compiler Options

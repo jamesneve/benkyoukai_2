@@ -8,7 +8,7 @@ import play.api.libs.ws._
 import play.api.mvc._
 import Results._
 
-import models.User
+import models.common.User
 
 import org.scalatest.DoNotDiscover
 

@@ -1,0 +1,12 @@
+@import models.common.User
+@(users: Seq[User])
+
+@layouts.admin("Users") {
+  <h1>Users</h1>
+
+  <ul>
+  @for(user <- users) {
+    <li>@user.username</li>
+  }
+  </ul>
+}

@@ -1,10 +1,10 @@
-package dao
+package dao.common
 
 import play.api.Play
 import slick.driver.MySQLDriver.api._
 import scala.concurrent.Future
 
-import models.Post
+import models.common.Post
 
 import java.sql.Date
 

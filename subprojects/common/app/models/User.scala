@@ -1,4 +1,4 @@
-package models
+package models.common
 
 case class User(id: Option[Long], username: String, password: String)
 

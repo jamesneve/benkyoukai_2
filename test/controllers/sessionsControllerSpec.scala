@@ -10,7 +10,7 @@ import org.scalatest.mock.MockitoSugar
 import org.mockito.Mockito._
 
 import controllers.SessionsController
-import models.User
+import models.common.User
 import com.jamesneve.factoryhedgehog.Factory
 
 import scala.concurrent.Future

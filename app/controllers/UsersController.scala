@@ -8,8 +8,8 @@ import play.api.data.Forms._
 import java.sql.Date
 import java.util.Calendar
 
-import dao._
-import models._
+import dao.common._
+import models.common._
 
 import com.roundeights.hasher.Implicits._
 

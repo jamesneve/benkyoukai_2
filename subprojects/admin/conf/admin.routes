@@ -1,0 +1,3 @@
+-> /         common.Routes
+
+GET     /users                      admin.controllers.UserManagementController.index

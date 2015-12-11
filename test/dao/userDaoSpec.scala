@@ -6,8 +6,8 @@ import scala.concurrent.Future
 import org.scalatest.concurrent._
 import org.scalatest.DoNotDiscover
 
-import dao.UserReadDAO
-import models.User
+import dao.common.UserReadDAO
+import models.common.User
 
 import com.jamesneve.factoryhedgehog.Factory
 

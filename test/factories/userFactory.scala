@@ -1,8 +1,8 @@
 package tests
 
-import dao.UserReadDAO
-import dao.UserWriteDAO
-import models.User
+import dao.common.UserReadDAO
+import dao.common.UserWriteDAO
+import models.common.User
 
 import com.jamesneve.factoryhedgehog.Factory
 import com.jamesneve.factoryhedgehog.FactoryDAO

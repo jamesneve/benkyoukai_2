@@ -15,8 +15,8 @@ import scala.language.postfixOps
 
 import com.roundeights.hasher.Implicits._
 
-import dao._
-import models._
+import dao.common._
+import models.common._
 
 case class UserForm(email: String, password: String)
 
