@@ -1,4 +1,4 @@
-name := """benkyoukai_2"""
+name := """simple_blog"""
 
 version := "1.0-SNAPSHOT"
 
